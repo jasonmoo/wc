@@ -19,13 +19,13 @@ type Counter struct {
 	Words      uint64
 }
 
-var BufferSize = 1 << 20
+var BufferSize = 4 << 20
 
 func init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
-func NewCounter(f io.Reader) *Counter {
+func NewCounter(f *os.File) *Counter {
 	return &Counter{
 		f: f,
 	}
