@@ -25,7 +25,7 @@ func init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
-func NewCounter(f *os.File) *Counter {
+func NewCounter(f io.Reader) *Counter {
 	return &Counter{
 		f: f,
 	}
